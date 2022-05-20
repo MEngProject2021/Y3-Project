@@ -1,0 +1,15 @@
+version: '2.1'
+services:
+  flask:
+    container_name: flask_app
+    ports:
+      - "8090:5000"
+    build: 
+      context: ./flask
+      dockerfile: Dockerfile
+    # command: [sh, -c, "python app.py"]
+    command: [sh, -c, "sleep infinity"]
+    volumes:
+      - ./flask:/app
+      - "/var/lib/docker/volumes/webodm_appmedia/_data:/webodm"
+
